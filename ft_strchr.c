@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   strchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:12:20 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/21 15:12:21 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/21 11:51:47 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/21 15:11:48 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char *ft_strchr(const char *str, int c)
 {
-	int	i;
-	i = 0;
+	int		ifind;
 
-	while (str[i])
+	ifind = 0;
+	
+	while (str[ifind])
 	{
-		i++;
-	}	
-	return (i);
+		if (c == str[ifind])
+		{
+			return ((char *)&(str[ifind]));
+		}
+		ifind++;
+	}
+	return (NUll);
 }
+

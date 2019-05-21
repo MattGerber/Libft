@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:12:20 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/21 15:12:21 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/21 15:09:52 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/21 15:09:53 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char    *ft_strcat(char *dest, const char *src)
 {
-	int	i;
-	i = 0;
+    int ilen;
+    int i;
 
-	while (str[i])
-	{
-		i++;
-	}	
-	return (i);
+    ilen = ft_strlen(dest);
+    i = 0;
+
+    while (src[i])
+    {
+        dest[ilen + i] = src[i];
+        i++;
+    }
+    dest[ilen + i] = 0;
+    return (dest); 
 }

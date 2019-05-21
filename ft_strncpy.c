@@ -1,9 +1,20 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/21 15:12:45 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/21 15:12:47 by magerber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char    *strncpy(char *dest, const char *src, size_t n)
+#include "libft.h"
+
+char    *ft_strncpy(char *dest, const char *src, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (i != n)
@@ -13,17 +24,4 @@ char    *strncpy(char *dest, const char *src, size_t n)
     }
     dest[i] = 0;
     return(dest);
-}
-
-int main () {
-   char src[40];
-   char dest[12];
-  
-   memset(dest, '\0', sizeof(dest));
-   strcpy(src, "This is tutorialspoint.com");
-   strncpy(dest, src, 10);
-
-   printf("Final copied string : %s\n", dest);
-   
-   return(0);
 }

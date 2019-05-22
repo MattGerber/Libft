@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:12:27 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/21 15:12:28 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/22 12:20:22 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char    *ft_strncat(char *dest, const char *src, size_t n)
 {
-    int ilen;
-    int i;
+    int 	ilen;
+    size_t	i;
 
     ilen = ft_strlen(dest);
     i = 0;

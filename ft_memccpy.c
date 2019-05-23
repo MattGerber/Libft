@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 14:13:32 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 14:55:04 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/23 14:46:04 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/23 14:55:24 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void *memccp0y(void	*dest, const void *src, int c, size_t n)
 {
 	char *d;
 	const char *s;
 
-	d = dst;
+	d = dest;
 	s = src;
 	while (n--)
 	{
+		if (*d == c)
+			break;
 		*d++ = *s++;
 	}
-	return (dst);
+	return (dest);
 }

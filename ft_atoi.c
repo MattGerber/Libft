@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:00:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 11:20:33 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:47:37 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int ft_atoi(const char *str)
 {
-	int negative;
-	int	res;
+	long	negative;
+	long	res;
 
 	negative = 1;
 	res = 0;
@@ -31,5 +31,8 @@ int ft_atoi(const char *str)
 		res = res * 10 + (*str - '0');
 		++str;
 	}
-	return (res *negative);
+	res *= negative;
+	res = (res > INTMAX) ? -1 : res;
+	res = (res < INTMIN) ? 0 : res;
+	return (int)(res);
 }

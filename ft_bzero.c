@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:12:20 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 14:39:59 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/23 13:40:47 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/23 13:49:39 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+void ft_bzero(void *s, int nbyte)
 {
-	int	i;
-	i = 0;
+	unsigned char	*p;
+	int 			i;
 
-	while (str[i])
+	p = s;
+	i = 0;
+	while (i < nbyte)
 	{
-		i++;
-	}	
-	return (i);
+		p[i] = 0;
+		i++;	
+	}
 }

@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 17:27:57 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 11:21:07 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/23 11:13:34 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/23 11:31:17 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int isalnum(int c)
+void *ft_memset(void *str, int c, size_t n)
 {
-	if ((c >= '0' && c <= '9')  || (c >= 'a' && c <= 'z') ||
-			(c >= 'A' && c <= 'Z'))
-		return (1);
-	else 
-		return (0);
+	unsigned char *ptr;
+	size_t i;
+	
+	ptr = str;
+	i = 0;
+	while (i != n)
+	{
+		ptr[i] = c;
+		i++;
+	}
+	return(ptr);
 }

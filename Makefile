@@ -6,7 +6,7 @@
 #    By: magerber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/21 15:09:42 by magerber          #+#    #+#              #
-#    Updated: 2019/05/23 14:37:43 by magerber         ###   ########.fr        #
+#    Updated: 2019/05/23 16:26:23 by magerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,11 @@ $(NAME):
 		gcc $(FLAGS) $(OPTIONS) $(SOURCE)
 		ar rc $(NAME) $(OBJECT)
 		ranlib $(NAME)
+
+so:
+	gcc -c ft_*.c -Wall -Wextra -Werror
+	gcc -shared -o libft.so -fPIC ft*.o
+	rm *.o
 
 clean:
 		/bin/rm -f $(OBJECT)

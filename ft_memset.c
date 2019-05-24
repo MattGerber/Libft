@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:13:34 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 13:49:41 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:28:01 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void *ft_memset(void *str, int c, size_t n)
 		ptr[i] = c;
 		i++;
 	}
-	return(ptr);
+	return (ptr);
 }

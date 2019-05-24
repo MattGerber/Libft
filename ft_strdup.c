@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:12:10 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 17:50:28 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/24 17:07:05 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 
-	ptr = (char*)malloc(i * sizeof(char));
+	if(!(ptr = (char*)malloc(i + 1 * sizeof(char))))
+			return (NULL);
 	i = 0;
 
 	while (s1[i])

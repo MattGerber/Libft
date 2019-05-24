@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 15:40:31 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 15:59:08 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/24 16:28:32 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void *ft_memchr(const void *str, int c, size_t n)
 	ptr = (unsigned char *)str;
 	while (n--)
 	{
-		if (*ptr == c)
+		if (*ptr == (unsigned char)c)
 			return (ptr);
 		ptr++;
 	}

@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:55:23 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/27 13:15:30 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 17:07:15 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,12 @@ char				*ft_strdup(const char *s1);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
+void				*ft_memalloc(size_t size);
+void				ft_memdel(void **ap);
+char				*ft_strnew(size_t size);
+void				ft_strdel(char **as);
+void				ft_strclr(char *s);
+void				ft_striter(char *s, void (*f)(char *));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif

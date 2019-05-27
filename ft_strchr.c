@@ -6,13 +6,13 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:51:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/27 10:15:16 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 13:10:23 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int		ifind;
 
@@ -26,9 +26,8 @@ char *ft_strchr(const char *str, int c)
 		ifind++;
 	}
 	if (c == str[ifind])
-    {
-    	return ((char *)&(str[ifind]));
-    }
+	{
+		return ((char *)&(str[ifind]));
+	}
 	return (NULL);
 }
-

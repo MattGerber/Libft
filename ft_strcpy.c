@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:12:01 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/21 18:12:30 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 13:02:11 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strcpy(char *dest, const char *src)
 	int	i;
 
 	i = 0;
-
 	while (src[i])
 	{
 		dest[i] = src[i];

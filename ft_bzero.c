@@ -6,22 +6,22 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:40:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 13:49:39 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 12:46:13 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, int nbyte)
+void	ft_bzero(void *s, int nbyte)
 {
 	unsigned char	*p;
-	int 			i;
+	int				i;
 
 	p = s;
 	i = 0;
 	while (i < nbyte)
 	{
 		p[i] = 0;
-		i++;	
+		i++;
 	}
 }

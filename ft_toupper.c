@@ -6,14 +6,14 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:01:12 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/22 18:12:16 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 12:52:29 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_toupper(int c)
-{	
+{
 	if ((c >= 'a') && (c <= 'z'))
 		return (c - 32);
 	else

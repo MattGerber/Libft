@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:13:32 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/24 13:43:31 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 12:49:30 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char *d;
-	const char *s;
+	char		*d;
+	const char	*s;
 
 	d = dst;
 	s = src;

@@ -6,13 +6,13 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:00:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/23 17:47:34 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 13:09:44 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long	negative;
 	long	res;

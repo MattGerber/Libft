@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:51:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/24 15:37:26 by magerber         ###   ########.fr       */
+/*   Updated: 2019/05/27 10:15:16 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char *ft_strchr(const char *str, int c)
 	int		ifind;
 
 	ifind = 0;
-	
 	while (str[ifind])
 	{
 		if (c == str[ifind])
@@ -26,6 +25,10 @@ char *ft_strchr(const char *str, int c)
 		}
 		ifind++;
 	}
+	if (c == str[ifind])
+    {
+    	return ((char *)&(str[ifind]));
+    }
 	return (NULL);
 }
 

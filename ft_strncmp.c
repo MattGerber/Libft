@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 14:46:04 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/27 10:53:42 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/27 11:01:10 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/27 11:09:52 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void	*dest, const void *src, int c, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+	unsigned char c1;
+    unsigned char c2;
 
-	d = (unsigned char *) dest;
-	s = (unsigned char *) src;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if (s[i] == (unsigned char) c)
-			return (dest + i + 1);
-		i++;
-	}
-	return (NULL);
+    c1 = *str1;
+    c2 = *str2;
+    while (c1 == c2 && n)
+    {
+        c1 = *str1++;
+        c2 = *str2++;
+        if (c1 == '\0')
+            return (c1 - c2);
+		n--;
+    }
+    return (c1- c2);
 }

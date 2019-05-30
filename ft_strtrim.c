@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 14:49:35 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/30 13:03:00 by magerber         ###   ########.fr       */
+/*   Created: 2019/05/30 12:50:18 by magerber          #+#    #+#             */
+/*   Updated: 2019/05/30 13:23:10 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strtrim(char const *s)
 {
+	int		ifront;
+	int		iback;
+	int		i;
 	char	*ptr;
 
-	ptr = (char *)malloc(size + 1 * sizeof(char));
+	ifront = 0;
+	i = 0;
+	iback = ft_strlen(s);
+	while (s[ifront] == '\n' || s[ifront] == '\t' || s[ifront] == ' ')
+		ifront++;
+	while (s[iback] == '\n' || s[iback] == '\t' || s[iback] == ' ')
+		iback--;
+	while (i < iback)
+		i++;
+	ptr = (char *)malloc(i * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	while (size + 1)
+	i = 0;
+	while (ifront < iback)
 	{
-		ptr[size] = 0;
-		size--;
+		ptr[i] = s[ifront];
+		ifront++;
+		i++;
 	}
 	return (ptr);
 }

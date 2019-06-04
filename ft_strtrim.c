@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:50:18 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/03 17:23:51 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/04 09:52:48 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s)
 		i++;
 	if (iback < ifront)
 		return ("");
-	ptr = ft_strnew( ft_strlen(s) - (iback - ifront));
-	ft_strncpy(ptr, (s + ifront), (iback - ifront));
+	ptr = ft_strnew(ft_strlen(s) - (iback - ifront));
+	ft_strncpy(ptr, (s + ifront), (iback - ifront + 1));
 	return (ptr);
 }

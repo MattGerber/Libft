@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 12:50:18 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/04 13:05:44 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/04 13:20:11 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/04 17:05:04 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	**ft_strsplit(char const *s, char c)
 {
-	int		ifront;
-	int		iback;
+	int		count;
 	int		i;
-	char	*ptr;
+	int		j;
+	char	**arr;
 
-	ifront = 0;
 	i = 0;
-	iback = ft_strlen(s);
-	while (s[ifront] == '\n' || s[ifront] == '\t' || s[ifront] == ' ')
-		ifront++;
-	while (s[iback - 1] == '\n' || s[iback - 1] == '\t' || s[iback - 1] == ' ')
-		iback--;
-	i = iback - ifront;
-	if (iback < ifront)
-		return ("");
-	ptr = ft_strnew(i);
-	ft_strncpy(ptr, (s + ifront), i);
-	ptr[i] = 0;
-	return (ptr);
+	j = 0;
+	count = ft_wordcount(s, c);
+	if (!(arr = (char **)malloc((count + 1) * sizeof(*arr))))
+		return (NULL);
+	while (s)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		if (*s == '\0')
+			break ;
+		arr[i] = ft_strnew(ft_wordlen(s, c));
+		while (*s != c && *s != '\0')
+			arr[i][j++] = *s++;
+		i++;
+		j = 0;
+	}
+	arr[i] = NULL;
+	return (arr);
 }

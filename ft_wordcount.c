@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 12:50:18 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/04 13:05:44 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/04 16:14:42 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/04 17:04:59 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int	ft_wordcount(const char *s, char c)
 {
-	int		ifront;
-	int		iback;
-	int		i;
-	char	*ptr;
+	int i;
+	int w;
 
-	ifront = 0;
 	i = 0;
-	iback = ft_strlen(s);
-	while (s[ifront] == '\n' || s[ifront] == '\t' || s[ifront] == ' ')
-		ifront++;
-	while (s[iback - 1] == '\n' || s[iback - 1] == '\t' || s[iback - 1] == ' ')
-		iback--;
-	i = iback - ifront;
-	if (iback < ifront)
-		return ("");
-	ptr = ft_strnew(i);
-	ft_strncpy(ptr, (s + ifront), i);
-	ptr[i] = 0;
-	return (ptr);
+	w = 0;
+	while (s[i++])
+	{
+		if (s[i] != c)
+		{
+			w++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
+	}
+	return (w);
 }

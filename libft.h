@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:55:23 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/03 16:52:50 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:18:16 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ char				*ft_strtrim(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar(char n);
 void				ft_putstr(char const *s);
+char				**ft_strsplit(char const *s, char c);
+int					ft_wordcount(const char *s, char c);
+int					ft_wordlen(const char *s, char c);
 
 #endif

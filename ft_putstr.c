@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 16:50:58 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/03 17:04:08 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:16:43 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
-	int i;
-
-	i = -1;
-	while (*s)
-		ft_putchar(*s++);
+	if (s != NULL)
+		while (*s)
+			ft_putchar(*s++);
 }

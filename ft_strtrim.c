@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:50:18 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/04 13:05:44 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:11:13 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s)
 	int		i;
 	char	*ptr;
 
+	if (s == NULL)
+		return (NULL);
 	ifront = 0;
 	i = 0;
 	iback = ft_strlen(s);
@@ -29,7 +31,8 @@ char	*ft_strtrim(char const *s)
 	i = iback - ifront;
 	if (iback < ifront)
 		return ("");
-	ptr = ft_strnew(i);
+	if (!(ptr = ft_strnew(i)))
+		return (NULL);
 	ft_strncpy(ptr, (s + ifront), i);
 	ptr[i] = 0;
 	return (ptr);

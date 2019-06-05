@@ -1,27 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 15:40:31 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/05 16:57:19 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/05 16:41:41 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/05 16:57:16 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memchr(const void *str, int c, size_t n)
-{
-	unsigned char *ptr;
-
-	ptr = (unsigned char *)str;
-	while (n--)
-	{
-		if (*ptr == (unsigned char)c)
-			return (ptr);
-		ptr++;
-	}
-	return (NULL);
-}

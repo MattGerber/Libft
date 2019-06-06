@@ -6,7 +6,7 @@
 #    By: magerber <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/21 15:09:42 by magerber          #+#    #+#              #
-#    Updated: 2019/06/05 15:55:13 by magerber         ###   ########.fr        #
+#    Updated: 2019/06/06 14:14:13 by magerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ SOURCE = ft_atoi.c \
         ft_toupper.c \
         ft_tolower.c \
 		ft_wordcount.c \
-		ft_wordlen.c 
+		ft_wordlen.c \
+		ft_lstnew.c
 OPTIONS = -c -I.
 
 all: $(NAME)

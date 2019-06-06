@@ -6,8 +6,30 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 16:41:41 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/05 16:57:16 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/06 15:09:35 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+t_list	*ft_lstnew(void *content, size_t content_size)
+{
+	t_list *newlist;
+
+	if (!(newlist = (t_list *)malloc(sizeof(*newlist))))
+		return (NULL);
+	if (content == NULL)
+	{
+		newlist->content = NULL;
+		newlist->content_size = 0;
+	}
+	else
+	{
+		if (!(newlist->content = malloc(content_size)))
+			return (NULL);
+		ft_memcpy(newlist->content, content, content_size);
+		newlist->content_size = content_size;
+	}
+	newlist->next = NULL;
+	return (newlist);
+}

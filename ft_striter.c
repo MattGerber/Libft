@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:11:50 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/30 13:27:57 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/07 16:55:05 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	int i;
 
+	if (!f)
+		return ;
 	i = 0;
 	if (s != NULL)
 	{

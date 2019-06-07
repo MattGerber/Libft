@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:20:11 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/05 15:30:16 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:55:29 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**ft_strsplit(char const *s, char c)
 	char	**arr;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	count = ft_wordcount(s, c);
 	if (!(arr = (char **)malloc((count + 1) * sizeof(*arr))))

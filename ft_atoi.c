@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:00:47 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/05 11:36:26 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:10:11 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ int	ft_atoi(const char *str)
 		++str;
 	}
 	res *= negative;
-	res = (res > INTMAX) ? -1 : res;
-	res = (res < INTMIN) ? 0 : res;
 	return (int)(res);
 }

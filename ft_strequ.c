@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 10:40:41 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/05 15:06:06 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:24:54 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strequ(char const *s1, char const *s2)
 	{
 		while (s1[i])
 		{
-			if (s1 != s2)
+			if (s1[i] != s2[i])
 				return (0);
 			i++;
 		}

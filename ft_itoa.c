@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 09:38:34 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/07 10:25:58 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/10 17:40:19 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,32 +25,6 @@ static int	ft_size(int n)
 		n /= 10;
 	}
 	return (size);
-}
-
-static char	*ft_convert(char *s, int n, int i)
-{
-	int c;
-
-	c = 0;
-	if (n == INTMIN)
-		s = ft_strdup("-2147483648");
-	else
-	{
-		if (n < 0)
-		{
-			c = 1;
-			n *= -1;
-			i++;
-		}
-		while (i > 0)
-		{
-			s[--i] = (n % 10 + '0');
-			n = n / 10;
-		}
-		if (c == 1)
-			s[0] = '-';
-	}
-	return (s);
 }
 
 char		*ft_itoa(int n)

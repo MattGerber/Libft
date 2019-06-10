@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_intsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 16:14:42 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/10 17:15:19 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/10 17:20:19 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/10 17:26:37 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
+int	ft_intsize(int n)
 {
-	int i;
-	int w;
+	int size;
 
-	i = 0;
-	w = 0;
-	while (s[i])
+	size = 0;
+	if (n < 0)
+		n *= -1;
+	while (n >= 1)
 	{
-		if (s[i] != c)
-		{
-			w++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-		}
-		if (s[i])
-			i++;
+		size++;
+		n /= 10;
 	}
-	return (w);
+	return (size);
 }

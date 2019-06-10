@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 16:14:42 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/10 17:15:19 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/10 15:50:14 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/10 16:26:31 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	int i;
-	int w;
+	t_list	*temp;
+	t_list	*next;
 
-	i = 0;
-	w = 0;
-	while (s[i])
+	temp = *alst;
+	if (del != NULL)
 	{
-		if (s[i] != c)
+		while (temp != NULL)
 		{
-			w++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
+			next = temp->next;
+			del(temp->content, temp->content_size);
+			free(temp);
+			temp = next;
 		}
-		if (s[i])
-			i++;
+		*alst = NULL;
 	}
-	return (w);
 }

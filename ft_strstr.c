@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:17:30 by magerber          #+#    #+#             */
-/*   Updated: 2019/05/28 16:11:52 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/10 16:33:24 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
 	if (ft_strlen(needle) == 0)

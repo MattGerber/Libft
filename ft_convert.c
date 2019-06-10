@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 16:14:42 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/10 17:15:19 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/10 17:21:45 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/10 17:40:21 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
+char	*ft_convert(char *s, int n, int i)
 {
-	int i;
-	int w;
+	int c;
 
-	i = 0;
-	w = 0;
-	while (s[i])
+	c = 0;
+	if (n == INTMIN)
+		s = ft_strdup("-2147483648");
+	else
 	{
-		if (s[i] != c)
+		if (n < 0)
 		{
-			w++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-		}
-		if (s[i])
+			c = 1;
+			n *= -1;
 			i++;
+		}
+		while (i > 0)
+		{
+			s[--i] = (n % 10 + '0');
+			n = n / 10;
+		}
+		if (c == 1)
+			s[0] = '-';
 	}
-	return (w);
+	return (s);
 }

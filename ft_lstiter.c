@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 16:14:42 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/10 17:15:19 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/10 16:09:04 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/10 16:11:36 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int i;
-	int w;
-
-	i = 0;
-	w = 0;
-	while (s[i])
+	if (f != NULL)
 	{
-		if (s[i] != c)
+		while (lst != NULL)
 		{
-			w++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
+			f(lst);
+			lst = lst->next;
 		}
-		if (s[i])
-			i++;
 	}
-	return (w);
 }

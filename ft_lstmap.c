@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 13:20:11 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/10 17:12:24 by magerber         ###   ########.fr       */
+/*   Created: 2019/06/10 16:18:14 by magerber          #+#    #+#             */
+/*   Updated: 2019/06/10 16:24:33 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int		count;
-	int		i;
-	int		j;
-	char	**arr;
+	t_list	*newlst;
+	t_list	*lsthead;
 
-	i = 0;
-	if (!s)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	count = ft_wordcount(s, c);
-	if (!(arr = (char **)malloc((count + 1) * sizeof(*arr))))
+	if (!(newlst = ft_lstnew(NULL, 0)))
 		return (NULL);
-	while (s)
+	newlst = f(lst);
+	lsthead = newlst;
+	while (lst->next != NULL)
 	{
-		j = 0;
-		while (*s == c && *s != '\0')
-			s++;
-		if (*s == '\0')
-			break ;
-		arr[i] = ft_strnew(ft_wordlen(s, c));
-		while (*s != c && *s != '\0')
-			arr[i][j++] = *s++;
-		i++;
+		lst = lst->next;
+		newlst->next = f(lst);
+		newlst = newlst->next;
 	}
-	arr[i] = NULL;
-	return (arr);
+	return (lsthead);
 }

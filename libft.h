@@ -6,7 +6,7 @@
 /*   By: magerber <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:55:23 by magerber          #+#    #+#             */
-/*   Updated: 2019/06/07 16:19:57 by magerber         ###   ########.fr       */
+/*   Updated: 2019/06/10 17:58:08 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define INTMIN -2147483648
 # include <string.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 
 typedef struct		s_list
@@ -46,7 +45,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 char				*ft_strrchr(const char *str, int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strdup(const char *s1);
@@ -81,7 +80,13 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl_fd(char *s, int fd);
-t_list				*ft_lstnew(void *content, size_t content_size);
+t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+char				*ft_convert(char *s, int n, int i);
+int					ft_isupper(int n);
 
 #endif
